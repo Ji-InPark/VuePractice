@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Router</title>
+</head>
+<body>
+    <div id="app">
+        <h1>뷰 탬플릿 예제</h1>
+        <div id="app">
+            <!--  <p>{{ var a = 10; }}</p> 선언문은 사용 불가-->
+            <!--  <p>{{ if(true) {return 100}}}</p> 분기문은 사용 불가-->
+            <p>{{ true ? 100 : 0 }}</p> <!-- 삼항 연산자는 사용 가능 -->
+            <!-- <p>{{ message.split('').reverse().join('') }}</p>이렇게 복잡한 로직은 인스턴스 안에서 수행 -->
+            <p>{{ reversedMessage }}</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!'
+            },
+            computed: {
+                reversedMessage: function(){
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
